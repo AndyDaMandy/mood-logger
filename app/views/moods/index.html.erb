@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Moods</h1>
+
+<div id="moods">
+  <% @moods.each do |mood| %>
+    <%= render mood %>
+    <p>
+      <%= link_to "Show this mood", mood %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mood", new_mood_path %>

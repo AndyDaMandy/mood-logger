@@ -1,0 +1,66 @@
+<%= form_with(model: mood) do |form| %>
+  <% if mood.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mood.errors.count, "error") %> prohibited this mood from being saved:</h2>
+
+      <ul>
+        <% mood.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :vibe, style: "display: block" %>
+    <%= form.text_field :vibe %>
+    <%= form.label :vibe, "Good:" %>
+    <%= form.radio_button :vibe, "Good" %>
+    <%= form.label :vibe, "Okay:" %>
+    <%= form.radio_button :vibe, "Okay" %>
+    <%= form.label :vibe, "Bad:" %>
+    <%= form.radio_button :vibe, "Bad" %>
+  </div>
+
+  <div>
+    <%= form.label :health, style: "display: block" %>
+    <%= form.text_field :health %>
+    <%= form.label :health, "Good:" %>
+    <%= form.radio_button :health, "Good" %>
+    <%= form.label :health, "Okay:" %>
+    <%= form.radio_button :health, "Okay" %>
+    <%= form.label :health, "Bad:" %>
+    <%= form.radio_button :health, "Bad" %>
+  </div>
+
+  <div>
+    <%= form.label :productivity, style: "display: block" %>
+    <%= form.text_field :productivity %>
+    <%= form.label :productivity, "Good:" %>
+    <%= form.radio_button :productivity, "Good" %>
+    <%= form.label :productivity, "Okay:" %>
+    <%= form.radio_button :productivity, "Okay" %>
+    <%= form.label :productivity, "Bad:" %>
+    <%= form.radio_button :productivity, "Bad" %>
+  </div>
+
+  <div>
+    <%= form.label :fun, style: "display: block" %>
+    <%= form.text_field :fun %>
+    <%= form.label :fun, "Good:" %>
+    <%= form.radio_button :fun, "Good" %>
+    <%= form.label :fun, "Okay:" %>
+    <%= form.radio_button :fun, "Okay" %>
+    <%= form.label :fun, "Bad:" %>
+    <%= form.radio_button :fun, "Bad" %>
+  </div>
+
+  <div>
+    <%= form.label :notes, style: "display: block" %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
