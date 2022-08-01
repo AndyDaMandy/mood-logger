@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
-  before_action :set_mood, only: %i[ show edit update destroy ]
+  before_action :set_mood, only: %i[ index show new create edit update destroy ]
 
   # GET /moods or /moods.json
   def index
