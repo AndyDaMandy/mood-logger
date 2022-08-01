@@ -13,7 +13,6 @@
 
   <div>
     <%= form.label :vibe, style: "display: block" %>
-    <%= form.text_field :vibe %>
     <%= form.label :vibe, "Good:" %>
     <%= form.radio_button :vibe, "Good" %>
     <%= form.label :vibe, "Okay:" %>
@@ -24,7 +23,6 @@
 
   <div>
     <%= form.label :health, style: "display: block" %>
-    <%= form.text_field :health %>
     <%= form.label :health, "Good:" %>
     <%= form.radio_button :health, "Good" %>
     <%= form.label :health, "Okay:" %>
@@ -35,7 +33,6 @@
 
   <div>
     <%= form.label :productivity, style: "display: block" %>
-    <%= form.text_field :productivity %>
     <%= form.label :productivity, "Good:" %>
     <%= form.radio_button :productivity, "Good" %>
     <%= form.label :productivity, "Okay:" %>
@@ -46,7 +43,6 @@
 
   <div>
     <%= form.label :fun, style: "display: block" %>
-    <%= form.text_field :fun %>
     <%= form.label :fun, "Good:" %>
     <%= form.radio_button :fun, "Good" %>
     <%= form.label :fun, "Okay:" %>
@@ -57,6 +53,7 @@
 
   <div>
     <%= form.label :notes, style: "display: block" %>
+    <%= form.label :notes, "Additional thoughts or feelings?" %>
     <%= form.text_area :notes %>
   </div>
 
