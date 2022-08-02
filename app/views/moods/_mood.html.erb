@@ -1,5 +1,8 @@
 <div id="<%= dom_id mood %>">
   <p>
+  <strong>Date created:</strong>
+  <%= mood.created_at %>
+  </p>
     <strong>Vibe:</strong>
     <%= mood.vibe %>
   </p>
@@ -23,10 +26,4 @@
     <strong>Notes:</strong>
     <%= mood.notes %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= mood.user_id %>
-  </p>
-
 </div>

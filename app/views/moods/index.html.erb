@@ -4,10 +4,9 @@
 
 <div id="moods">
   <% current_user.moods.each do |mood| %>
-    <%= render mood %>
-    <p>
-      <%= link_to "Show this mood", mood_path(mood) %>
-    </p>
+    <li>
+      <%= link_to mood.created_at, mood_path(mood) %>
+    </li>
   <% end %>
 </div>
 
