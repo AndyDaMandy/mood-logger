@@ -4,5 +4,4 @@ class Mood < ApplicationRecord
   validates :health, presence: true
   validates :fun, presence: true
   validates :productivity, presence: true
-  validates :user_id, presence: true
 end

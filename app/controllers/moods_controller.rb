@@ -1,19 +1,19 @@
 class MoodsController < ApplicationController
-  before_action :set_mood, only: %i[ index show new create edit update destroy ]
-
+  #before_action :set_mood, only: %i[ index show new create edit update destroy ]
+  before_action :authenticate_user!
   # GET /moods or /moods.json
   def index
-    @moods = Mood.all
+    @moods = current_user.moods.all
   end
 
   # GET /moods/1 or /moods/1.json
   def show
-    @mood = Mood.find(params[:id])
+    @mood = current_user.moods.find(params[:id])
   end
 
   # GET /moods/new
   def new
-    @mood = Mood.new
+    @mood = current_user.moods.build
   end
 
   # GET /moods/1/edit
@@ -22,7 +22,7 @@ class MoodsController < ApplicationController
 
   # POST /moods or /moods.json
   def create
-    @mood = Mood.new(mood_params)
+    @mood = current_user.moods.build(mood_params)
 
     respond_to do |format|
       if @mood.save
@@ -38,7 +38,7 @@ class MoodsController < ApplicationController
   # PATCH/PUT /moods/1 or /moods/1.json
   def update
     respond_to do |format|
-      if @mood.update(mood_params)
+      if current_user.mood.update(mood_params)
         format.html { redirect_to mood_url(@mood), notice: "Mood was successfully updated." }
         format.json { render :show, status: :ok, location: @mood }
       else
@@ -50,7 +50,7 @@ class MoodsController < ApplicationController
 
   # DELETE /moods/1 or /moods/1.json
   def destroy
-    @mood.destroy
+    current_user.mood.destroy
 
     respond_to do |format|
       format.html { redirect_to moods_url, notice: "Mood was successfully destroyed." }
@@ -61,7 +61,7 @@ class MoodsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mood
-      @mood = Mood.find(params[:id])
+      @mood = current_user.mood.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

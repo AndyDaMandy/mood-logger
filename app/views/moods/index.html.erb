@@ -3,12 +3,12 @@
 <h1>Moods</h1>
 
 <div id="moods">
-  <% @moods.each do |mood| %>
+  <% current_user.moods.each do |mood| %>
     <%= render mood %>
     <p>
-      <%= link_to "Show this mood", mood %>
+      <%= link_to "Show this mood", user_moods_path(mood) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New mood", new_mood_path %>
+<%= link_to "New mood", new_user_mood_path %>

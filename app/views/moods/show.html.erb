@@ -3,8 +3,8 @@
 <%= render @mood %>
 
 <div>
-  <%= link_to "Edit this mood", edit_mood_path(@mood) %> |
-  <%= link_to "Back to moods", moods_path %>
+  <%= link_to "Edit this mood", edit_user_mood(@mood) %> |
+  <%= link_to "Back to moods", user_moods_path %>
 
   <%= button_to "Destroy this mood", @mood, method: :delete %>
 </div>
