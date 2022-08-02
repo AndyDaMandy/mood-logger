@@ -19,12 +19,6 @@ class MoodsController < ApplicationController
   # GET /moods/1/edit
   def edit
     @mood = current_user.moods.find(params[:id])
-
-    if @mood.update(mood_params)
-      redirect_to @mood
-    else
-      render :edit, status: :unprocessable_entity
-    end
   end
 
   # POST /moods or /moods.json
@@ -44,9 +38,10 @@ class MoodsController < ApplicationController
 
   # PATCH/PUT /moods/1 or /moods/1.json
   def update
+    @mood = current_user.moods.find(params[:id])
     respond_to do |format|
-      if current_user.mood.update(mood_params)
-        format.html { redirect_to user_moods, notice: "Mood was successfully updated." }
+      if @mood.update(mood_params)
+        format.html { redirect_to mood_url(@mood), notice: "Mood was successfully updated." }
         format.json { render :show, status: :ok, location: @mood }
       else
         format.html { render :edit, status: :unprocessable_entity }
