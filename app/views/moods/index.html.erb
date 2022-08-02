@@ -6,7 +6,7 @@
   <% current_user.moods.each do |mood| %>
     <%= render mood %>
     <p>
-      <%= link_to "Show this mood", user_moods_path(mood) %>
+      <%= link_to "Show this mood", mood_path(mood) %>
     </p>
   <% end %>
 </div>
