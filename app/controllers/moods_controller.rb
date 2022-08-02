@@ -64,7 +64,7 @@ class MoodsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mood
-      @mood = current_user.mood.find(params[:id])
+      @mood = current_user.moods
     end
 
     # Only allow a list of trusted parameters through.

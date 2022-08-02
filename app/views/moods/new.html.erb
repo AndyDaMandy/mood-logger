@@ -1,9 +1,9 @@
 <h1>New mood</h1>
 
-<%= render "form", mood: @mood %>
+<%= render "newform",  mood: @mood %>
 
 <br>
 
 <div>
-  <%= link_to "Back to moods", user_moods_path %>
+  <%= link_to "Back to moods", user_moods_path(current_user) %>
 </div>
